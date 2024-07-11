@@ -35,6 +35,7 @@ dependencies {
 	compileOnly("org.projectlombok:lombok")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("com.h2database:h2")
+	runtimeOnly("com.mysql:mysql-connector-j")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
@@ -51,6 +52,12 @@ allOpen {
 	annotation("javax.persistence.Entity")
 	annotation("javax.persistence.MappedSuperclass")
 	annotation("javax.persistence.Embeddable")
+}
+
+noArg {
+	annotation("jakarta.persistence.Entity")
+	annotation("jakarta.persistence.Embeddable")
+	annotation("jakarta.persistence.MappedSuperclass")
 }
 
 tasks.withType<Test> {
